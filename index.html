@@ -39,6 +39,7 @@
       .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 6px 0 14px; }
       .badge { padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
       .desc { color: #49515a; line-height: 1.6; margin: 0 auto 16px; text-align: left; max-width: 48ch; }
+      .desc code { color: #6d0abe; text-decoration: underline; text-underline-offset: 2px;}
       .divider { height: 1px; background: var(--border); width: 100%; margin: 12px 0 16px; }
 
       .actions { display: flex; justify-content: center; }
@@ -47,7 +48,7 @@
       .btn:hover { background: var(--brand-dark); }
 
       footer { text-align: center; color: #777; font-size: 0.9rem; margin-top: 40px; }
-    .card-footer { margin-top: auto; }
+
     </style>
   </head>
   <body>
@@ -57,26 +58,49 @@
       </header>
 
       <section class="projects">
+
         <article class="card">
-          <h2>React Calculator</h2>
-          <div class="badges"><span class="badge">Classwork</span><span class="badge">React • Vite</span></div>
-          <p class="desc">Single-page calculator that adds a <strong>Discount</strong> number input and computes VAT <code>vat = (price - discount) × 0.07</code>. Styled UI, configured base path, built with Vite, and deployed to GitHub Pages (static artefact: HTML/CSS/JS).</p>
-          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="react_calculator-build/">View Project</a></div></div></div>
+          <h2>Pet Shop</h2>
+          <div class="badges"><span class="badge">Classwork 01 - 03</span><span class="badge">HTML • CSS • JS </span></div>
+          <p class="desc">Static Pet Shop (HTML/CSS/JS + jQuery): adds <code>pets.html</code> with a gallery that loads images from the <code>img/</code> folder and renders from a JS array. Reusable styles moved to a shared CSS file. Includes live checkbox filters (Dogs, Cats, Capybaras, Birds) and a Contact section with smooth scroll, address, and embedded Google Map.</p>
+
+          <div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="Pet-shop/index.html">View Project</a></div></div>
         </article>
 
+        <article class="card">
+          <h2>Quotation Web</h2>
+          <div class="badges"><span class="badge">Classwork 03</span><span class="badge">HTML • CSS • JS </span></div>
+          <p class="desc">Enhanced Accessory Shop: add products via a modal with a predefined selector; auto-calculates gross price, VAT, and total, with an option to delete rows.</p>
+
+          <div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="quotationWeb/quotation.html">View Project</a></div></div>
+        </article>
+
+        <article class="card">
+          <h2>React Calculator</h2>
+          <div class="badges"><span class="badge">Classwork 04</span><span class="badge">React • Vite</span></div>
+          <p class="desc">Single-page calculator that adds a <strong>Discount</strong> number input and computes VAT <code>vat = (price - discount) × 0.07</code>. Styled UI, configured base path, built with Vite, and deployed to GitHub Pages (static artefact: HTML/CSS/JS).</p>
+          <div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="react_calculator-build/">View Project</a></div></div>
+        </article>
 
         <article class="card">
           <h2>Spending Tracker</h2>
           <div class="badges"><span class="badge">Project 1</span><span class="badge">React • Vite</span></div>
-          <p class="desc">Two-page app: Analytics Dashboard (daily/weekly/monthly totals, line & pie charts) and Journal for entries (date, category, amount). Supports custom categories; data persists in localStorage (no backend).</p>
-          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="SpendingTracker-main-build/">View Project</a></div></div></div>
+          <p class="desc">Two-page app: <strong>Analytics Dashboard</strong> (daily/weekly/monthly totals, line & pie charts) and <strong>Journal for entries</strong> (date, category, amount). Supports custom categories; data persists in localStorage (no backend).</p>
+          <div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="SpendingTracker-main-build/">View Project</a></div></div>
         </article>
 
         <article class="card">
           <h2>Midterm Quotation App</h2>
           <div class="badges"><span class="badge">Midterm</span><span class="badge">React • Vite • MUI</span></div>
           <p class="desc">Quotation tool that preloads items from JSON, applies per‑row line‑item discounts, merges exact duplicates by name & price, and shows summary totals. UI migrated to MUI and deployed on GitHub Pages.</p>
-          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="midterm-quotation-app-build/">View Project</a></div></div></div>
+          <div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="midterm-quotation-app-build/">View Project</a></div></div>
+        </article>
+
+        <article class="card">
+          <h2>Project 02</h2>
+          <div class="badges"><span class="badge">Project 2</span><span class="badge">React • Vite</span></div>
+          <p class="desc"><strong>Work in Progress...</strong></p>
+          <div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="#">...</a></div></div>
         </article>
       </section>
 

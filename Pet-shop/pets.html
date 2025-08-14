@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>Pet Store</title> 
+
+    <link rel="stylesheet" href="Assets/CSS/style.css"> 
+
+</head> 
+
+<body> 
+
+    <header> 
+
+        <h1>Welcome to Our Pet Store</h1> 
+
+        <nav> 
+
+            <a href="index.html" onclick="window.location.href='index.html'">Home</a> 
+
+            <a href="pets.html" onclick="window.location.href='pets.html'">Pets</a> 
+
+            <a href="index.html">Contact</a> 
+
+        </nav> 
+
+    </header> 
+
+ 
+
+    <main> 
+
+        <section class="featured"> 
+
+            <h2>Featured Pets</h2> 
+            <div style="display: flex; gap: 24px; justify-content: center"> 
+                Type:
+                <div style="display: flex;">
+                    <div><input type="checkbox" id="type-dogs" name="pet-type" value="Dog"checked/>Dogs</div> 
+                    <div><input type="checkbox" id="type-cats" name="pet-type" value="Cat"checked/>Cats</div>
+                    <div><input type="checkbox" id="type-capybaras" name="pet-type" value="Capybara"checked/>Capybaras</div>
+                    <div><input type="checkbox" id="type-birds" name="pet-type" value="Bird"checked/>Birds</div>
+                </div>
+            </div>
+
+
+
+            <div class="pet-list"> 
+
+                <div class="pet"> 
+
+                    <img src="Assets/Img/dog.jpg" alt="Cute Dog"> 
+
+                    <p>Charlie - Golden Retriever</p> 
+
+                    <button onclick="adoptPet()">Adopt Now</button> 
+
+                </div> 
+
+                <div class="pet"> 
+
+                    <img src="Assets/Img/cat.webp" alt="Cute Cat"> 
+
+                    <p>Milo - British Shorthair</p> 
+
+                    <button onclick="adoptPet()">Adopt Now</button> 
+
+                </div> 
+
+            </div> 
+
+        </section> 
+
+    </main> 
+
+    <script src="Assets/JS/script.js"></script> 
+
+</body> 
+
+</html> 
