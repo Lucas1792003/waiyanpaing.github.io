@@ -38,7 +38,7 @@
       .card h2 { font-size: 1.15rem; margin: 2px 0 8px; color: var(--brand); }
       .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 6px 0 14px; }
       .badge { padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
-      .desc { color: #49515a; line-height: 1.5; margin: 0 0 16px; }
+      .desc { color: #49515a; line-height: 1.6; margin: 0 auto 16px; text-align: left; max-width: 48ch; }
       .divider { height: 1px; background: var(--border); width: 100%; margin: 12px 0 16px; }
 
       .actions { display: flex; justify-content: center; }
@@ -53,27 +53,28 @@
   <body>
     <div class="container">
       <header>
-        <h1>Web Development Projects – Wai Yan Paing (6511171)</h1>
+        <h1>Web Development CSX4107/ITX4107 Projects <br> Wai Yan Paing (6511171)</h1>
       </header>
 
       <section class="projects">
         <article class="card">
           <h2>React Calculator</h2>
-          <div class="badges"><span class="badge">CSX4107/ITX4107</span><span class="badge">Classwork</span><span class="badge">React • Vite</span></div>
+          <div class="badges"><span class="badge">Classwork</span><span class="badge">React • Vite</span></div>
           <p class="desc">Single-page calculator that adds a <strong>Discount</strong> number input and computes VAT <code>vat = (price - discount) × 0.07</code>. Styled UI, configured base path, built with Vite, and deployed to GitHub Pages (static artefact: HTML/CSS/JS).</p>
-          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="react-calculator-build/">View Project</a></div></div></div>
+          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="react_calculator-build/">View Project</a></div></div></div>
         </article>
+
 
         <article class="card">
           <h2>Spending Tracker</h2>
-          <div class="badges"><span class="badge">CSX4107/ITX4107</span><span class="badge">Project 1</span><span class="badge">React • Vite</span></div>
+          <div class="badges"><span class="badge">Project 1</span><span class="badge">React • Vite</span></div>
           <p class="desc">Two-page app: Analytics Dashboard (daily/weekly/monthly totals, line & pie charts) and Journal for entries (date, category, amount). Supports custom categories; data persists in localStorage (no backend).</p>
           <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="SpendingTracker-main-build/">View Project</a></div></div></div>
         </article>
 
         <article class="card">
           <h2>Midterm Quotation App</h2>
-          <div class="badges"><span class="badge">CSX4107/ITX4107</span><span class="badge">Midterm</span><span class="badge">React • Vite • MUI</span></div>
+          <div class="badges"><span class="badge">Midterm</span><span class="badge">React • Vite • MUI</span></div>
           <p class="desc">Quotation tool that preloads items from JSON, applies per‑row line‑item discounts, merges exact duplicates by name & price, and shows summary totals. UI migrated to MUI and deployed on GitHub Pages.</p>
           <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="midterm-quotation-app-build/">View Project</a></div></div></div>
         </article>
