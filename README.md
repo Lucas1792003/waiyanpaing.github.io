@@ -6,6 +6,8 @@ The homepage lists class assignments and projects with short descriptions and li
 **Live site:** https://lucas1792003.github.io/waiyanpaing.github.io/
 
 ---
+## Added Intresting Feature
+-Elden Ring Mode
 
 ## What’s in this repo
 
