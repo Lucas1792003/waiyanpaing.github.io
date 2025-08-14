@@ -10,7 +10,7 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.1"
   },
-  "homepage": "https://luphone04.github.io/SpendingTracker",
+  "homepage": "https://lucas1792003.github.io/waiyanpaing.github.io/SpendingTracker-main",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
