@@ -4,8 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/SpendingTracker-main-build/',
-  build: {
-    outDir: 'dist',
-  },
+  base: '/waiyanpaing.github.io/SpendingTracker-main-build/',
 })
