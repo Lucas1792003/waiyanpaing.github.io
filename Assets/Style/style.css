@@ -1,0 +1,430 @@
+
+      * { box-sizing: border-box; }
+
+      /* === Light theme variables (default) === */
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface-2: #f9f9f9;
+        --gold: #0b61a4;           
+        --gold-2: #084c80;
+        --muted: #5b6570;
+        --ink: #111;
+        --line: #e5e7eb;
+        --shadow: rgba(0,0,0,0.08);
+      }
+
+      /* === Elden Ring theme variables === */
+      html[data-theme="elden"] {
+        --bg: #0b0d0f;
+        --surface: #121417;
+        --surface-2: #0f1215;
+        --gold: #c9a227;
+        --gold-2: #a8892b;
+        --muted: #c9cfd6;
+        --ink: #e8ebef;
+        --line: #252a2f;
+        --shadow: rgba(0,0,0,0.5);
+      }
+
+      /* === Base === */
+      html, body { height: 100%; }
+      body {
+        font-family: "Crimson Text", Georgia, serif;
+        background: var(--bg);
+        color: var(--muted);
+        margin: 0;
+      }
+      html[data-theme="elden"] body {
+        background:
+          radial-gradient(1200px 800px at 50% -10%, rgba(201,162,39,0.07), transparent 60%),
+          radial-gradient(1000px 500px at 120% 20%, rgba(201,162,39,0.05), transparent 60%),
+          radial-gradient(800px 500px at -20% 80%, rgba(201,162,39,0.04), transparent 60%),
+          linear-gradient(180deg, #0b0d0f, #0b0d0f);
+      }
+
+      body::before {
+        content: "";
+        position: fixed; inset: 0;
+        pointer-events: none;
+        background:
+          repeating-linear-gradient(0deg, rgba(255,255,255,0.01) 0 2px, transparent 2px 4px),
+          repeating-linear-gradient(90deg, rgba(255,255,255,0.005) 0 1px, transparent 1px 3px);
+        mix-blend-mode: overlay; opacity: .35;
+      }
+      html:not([data-theme="elden"]) body::before { display: none; }
+
+      .container { max-width: 1000px; margin: 0 auto; padding: 28px 18px 40px; }
+
+      /* === Header === */
+      header { 
+        background: var(--surface-2);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px 14px 18px;
+        box-shadow: 0 10px 30px var(--shadow);
+      }
+      html[data-theme="elden"] header {
+        background: linear-gradient(180deg, rgba(201,162,39,0.08), rgba(201,162,39,0.02) 70%, transparent);
+      }
+      header h1 {
+        font-family: "Cinzel", serif;
+        letter-spacing: .5px;
+        color: var(--ink);
+        font-size: 1.65rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        text-shadow: 0 1px 0 #000;
+        position: relative;
+      }
+      html:not([data-theme="elden"]) header h1 { text-shadow: none; }
+      html[data-theme="elden"] header h1::after {
+        content: "";
+        display: block;
+        margin: 10px auto 0;
+        width: 180px; height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        box-shadow: 0 0 16px rgba(201,162,39,0.5);
+      }
+
+
+      .er-badge { display: none; }
+
+      html[data-theme="elden"] .er-badge { 
+        display: inline;
+
+        text-shadow: 0 1px 0 #000, 0 0 8px rgba(201,162,39,.35);
+      }
+      .characters {
+        display: none;
+      }
+
+      html[data-theme="elden"] .characters {
+        display: block;
+      }
+      /* === Projects Grid === */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        align-items: stretch;
+        margin-top: 16px;
+      }
+
+      /* === Card === */
+      .card {
+        display: flex; flex-direction: column; height: 100%;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 6px 18px var(--shadow);
+        position: relative;
+        opacity: 0.80;
+        overflow: hidden;
+      }
+      html[data-theme="elden"] .card {
+        background:
+          radial-gradient(600px 300px at 50% -20%, rgba(201,162,39,0.06), transparent 60%),
+          linear-gradient(180deg, var(--surface), var(--surface-2));
+      }
+      .card::before {
+        content: "";
+        position: absolute; inset: -1px -1px auto auto;
+        width: 120px; height: 120px; border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(201,162,39,0.12), transparent 70%);
+        filter: blur(10px); opacity: .7; pointer-events: none;
+      }
+      .card h2 {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        margin: 2px 0 6px;
+        color: #0b61a4;
+        letter-spacing: .3px;
+      }
+      html[data-theme="elden"] .card h2 {
+        color: var(--gold);
+      }
+      .badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 4px 0 10px; }
+      .badge { padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; font-size: 0.78rem; color: var(--muted); background: rgba(255,255,255,0.02); }
+      .desc { color: #1b1b1b; line-height: 1.45; margin: 0 auto 12px; text-align: left; max-width: 52ch; }
+      html[data-theme="elden"] .desc {color: #f0f3f7; }
+      .desc code { color: var(--gold); text-decoration: none; background: rgba(201,162,39,0.08); padding: 0 4px; border-radius: 4px; }
+
+      .divider { height: 1px; background: var(--line); width: 100%; margin: 10px 0 12px; }
+
+      .actions { display: flex; justify-content: center; }
+      .card-footer { margin-top: auto; }
+
+      /* === Button === */
+      .btn {
+        display: inline-block;
+        padding: 9px 16px;
+        background: #0b61a4; 
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 700;
+        text-align: center;
+        letter-spacing: .3px;
+        border: 1px solid #084c80;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset, 0 6px 18px rgba(0,0,0,0.1);
+        transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
+      }
+      .btn:hover {
+        filter: brightness(1.05);
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset, 0 10px 26px rgba(0,0,0,0.15);
+        transform: translateY(-1px);
+      }
+
+
+      html[data-theme="elden"] .btn {
+        background: linear-gradient(180deg, var(--gold), var(--gold-2));
+        color: #0b0d0f; 
+        border: 1px solid #d8bc61;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.25) inset, 0 6px 18px rgba(201,162,39,0.25);
+      }
+      html[data-theme="elden"] .btn:hover {
+        filter: brightness(1.05);
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.25) inset, 0 10px 26px rgba(201,162,39,0.35);
+      }
+
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 26px;
+        padding: 8px 0 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-title {
+        font-family: "Cinzel", serif;
+        color: var(--ink);
+        font-size: 1.25rem;
+        text-align: center;
+        margin: 18px 0 12px;
+        letter-spacing: .4px;
+        text-shadow: 0 1px 0 #000;
+      }
+      .section-title::after {
+        content: "";
+        display: block;
+        margin: 8px auto 0;
+        width: 160px; height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        box-shadow: 0 0 12px rgba(201,162,39,0.4);
+      }
+
+      /* CHARACTER GRID */
+      .characters { 
+        margin-top: 14px; 
+        background: linear-gradient(180deg, rgba(201,162,39,0.04), rgba(201,162,39,0.01));
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 14px;
+        box-shadow: 0 8px 20px var(--shadow);
+      }
+      .char-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;  
+      }
+
+
+      .char-card {
+        position: relative;
+        margin: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(180deg, var(--surface), var(--surface-2));
+        border: 1px solid var(--line);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+        isolation: isolate;
+      }
+
+      /* subtle vignette + gold rim */
+      .char-card::before {
+        content: "";
+        position: absolute; inset: 0;
+        background: radial-gradient(120% 90% at 50% 10%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
+        z-index: 1; pointer-events: none;
+      }
+      .char-card::after {
+        content: "";
+        position: absolute; inset: 0;
+        border: 1px solid rgba(201,162,39,0.35);
+        border-radius: 10px;
+        box-shadow: inset 0 0 0 1px rgba(201,162,39,0.15), 0 0 18px rgba(201,162,39,0.12);
+        z-index: 2; pointer-events: none;
+      }
+
+      /* image */
+      .char-card img {
+        display: block;
+        width: 100%; height: 230px; object-fit: cover;
+        filter: saturate(0.92) contrast(1.02);
+        transform: scale(1.01);
+        transition: transform .25s ease;
+      }
+
+      /* caption overlay */
+      .char-card figcaption {
+        position: absolute; left: 0; right: 0; bottom: 0;
+        z-index: 3;
+        display: flex; flex-direction: column; align-items: center;
+        gap: 2px;
+        padding: 10px 8px 12px;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(6,7,8,0.85) 45%, rgba(6,7,8,0.98) 100%);
+        border-top: 1px solid rgba(201,162,39,0.12);
+      }
+
+      .char-card .name {
+        font-family: "Cinzel", serif;
+        color: var(--gold);
+        font-size: .98rem;
+        letter-spacing: .3px;
+      }
+      .char-card .role {
+        color: #c9cfd6;
+        font-size: .8rem;
+        opacity: .9;
+      }
+
+      /* hover motion */
+      .char-card:hover img { transform: scale(1.05); }
+
+      /* container for label + slider */
+      .theme-toggle-wrap {
+        position: fixed; 
+        left: 66px; 
+        bottom: 26px; 
+        z-index: 9999;
+        text-align: center;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+
+      /* label above slider */
+      .theme-label-top {
+        margin-bottom: 6px;
+        font-weight: 600;
+        white-space: nowrap;
+        text-shadow: 0 1px 0 #000;
+      }
+
+      /* slider */
+      .theme-slider {
+        display: inline-block;
+        cursor: pointer; 
+        user-select: none;
+      }
+
+      /* hide native checkbox */
+      .theme-slider input {
+        position: absolute; 
+        inset: 0; 
+        opacity: 0; 
+        width: 0; 
+        height: 0;
+      }
+
+      /* track - made wider */
+      .theme-slider .track {
+        display: block; 
+        width: 70px;     /* wider */
+        height: 34px;
+        background: #d6d6d6;
+        border: 2px solid #c7c7c7;
+        border-radius: 999px;
+        box-shadow: 0 2px 6px rgba(0,0,0,.15) inset, 0 2px 6px rgba(0,0,0,.12);
+        transition: background .18s ease, border-color .18s ease, box-shadow .18s ease;
+        position: relative;
+      }
+
+      /* thumb */
+      .theme-slider .thumb {
+        position: absolute; 
+        top: 50%; 
+        left: 2px; 
+        transform: translateY(-50%);
+        width: 28px; 
+        height: 28px; 
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0,0,0,.35);
+        transition: left .18s ease, background .18s ease, box-shadow .18s ease;
+      }
+
+      /* ON (light mode) */
+      .theme-slider input:checked + .track {
+        background: #1a1764;
+        border-color: #0f0d52;
+      }
+      .theme-slider input:checked + .track .thumb {
+        left: 38px; /* adjusted for new width */
+      }
+
+      /* Elden mode ON */
+      html[data-theme="elden"] .theme-slider .track {
+        background: linear-gradient(180deg, var(--gold), var(--gold-2));
+        border-color: #d8bc61;
+        box-shadow: 0 0 8px rgba(201,162,39,0.4), 0 2px 6px rgba(0,0,0,.25) inset;
+      }
+      html[data-theme="elden"] .theme-slider .thumb {
+        background: #0b0d0f;
+        box-shadow: 0 0 6px rgba(201,162,39,0.35);
+      }
+      html[data-theme="elden"] .theme-slider input:not(:checked) + .track {
+        background: #444; border-color: #333;
+      }
+
+      
+      /* keyboard focus */
+      .theme-slider input:focus-visible + .track {
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+      }
+
+      @media (max-width:480px) {
+        .theme-slider { left: 12px; bottom: 12px; }
+      }
+
+
+
+      /* small screens */
+      @media (max-width: 480px) {
+        .char-card img { height: 200px; }
+      }
+
+      /* Small screens */
+      @media (max-width: 480px) {
+        .container { padding: 20px 14px 28px; }
+        header h1 { font-size: 1.35rem; }
+        .projects { gap: 12px; }
+        .card { padding: 14px; }
+        .btn { padding: 8px 14px; }
+      }
+
+      /* Elden Ring: background video */
+      .elden-video-bg{
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .35s ease, visibility .35s ease;
+      }
+
+      /* Show only in Elden mode */
+      html[data-theme="elden"] .elden-video-bg{
+        opacity: .25;       
+        visibility: visible;
+      }

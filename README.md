@@ -7,7 +7,7 @@ The homepage lists class assignments and projects with short descriptions and li
 
 ---
 ## Added Intresting Feature
--Elden Ring Mode
+- Elden Ring Mode
 
 ## What’s in this repo
 
