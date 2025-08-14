@@ -1,42 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Wai Yan Paing - 6511171</title> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Development Projects – Wai Yan Paing</title>
     <style>
+      * { box-sizing: border-box; }
+      :root {
+        --brand: #0b61a4;
+        --brand-dark: #084c80;
+        --border: #e5e7eb;
+        --muted: #5b6570;
+              }
       body {
-        font-family: sans-serif;
-        text-align: center;
-        padding: 40px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #fff;
+        color: #222;
+        margin: 0;
+      }
+      .container { max-width: 1100px; margin: 0 auto; padding: 48px 20px 64px; }
+      header h1 { text-align: center; font-size: 2rem; font-weight: 700; margin: 0 0 32px; }
+
+      /* Grid */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        align-items: stretch;
       }
 
-      h1 {
-        margin-bottom: 30px;
+      /* Card */
+      .card {
+        display: flex; flex-direction: column; height: 100%;
+        border: 1px solid var(--border); border-radius: 10px; padding: 22px;
+        text-align: center; background: #fff;
       }
+      .card h2 { font-size: 1.15rem; margin: 2px 0 8px; color: var(--brand); }
+      .badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 6px 0 14px; }
+      .badge { padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 0.8rem; color: var(--muted); }
+      .desc { color: #49515a; line-height: 1.5; margin: 0 0 16px; }
+      .divider { height: 1px; background: var(--border); width: 100%; margin: 12px 0 16px; }
 
-      a {
-        display: inline-block;
-        margin: 10px;
-        padding: 12px 20px;
-        background-color: #007acc;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        transition: background-color 0.3s;
-      }
+      .actions { display: flex; justify-content: center; }
+      .card-footer { margin-top: auto; }
+      .btn { display: inline-block; padding: 10px 18px; background: var(--brand); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; text-align: center; }
+      .btn:hover { background: var(--brand-dark); }
 
-      a:hover {
-        background-color: #005fa3;
-      }
+      footer { text-align: center; color: #777; font-size: 0.9rem; margin-top: 40px; }
+    .card-footer { margin-top: auto; }
     </style>
   </head>
   <body>
-    <h1>Hello, I'm Wai Yan Paing. ID-6511171</h1> 
+    <div class="container">
+      <header>
+        <h1>Web Development Projects – Wai Yan Paing (6511171)</h1>
+      </header>
 
-    <p>
-      <a href="midterm-prep-build/">Practice-1</a>
-      <a href="midterm-prep1-build/">Go to Midterm Prep 1 App</a>
-      <a href="midterm-quotation-app-build/">Go to Midterm Quotation App</a>
-    </p>
+      <section class="projects">
+        <article class="card">
+          <h2>Midterm Prep 1 App</h2>
+          <div class="badges"><span class="badge">Practice</span><span class="badge">React • Vite</span></div>
+          <p class="desc">A small React/Vite exercise focusing on component structure, props, and basic state before the midterm.</p>
+          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="midterm-quotation-app-build/">View Project</a></div></div></div>
+        </article>
+
+        <article class="card">
+          <h2>Midterm Quotation App</h2>
+          <div class="badges"><span class="badge">CSX4107/ITX4107</span><span class="badge">Midterm</span><span class="badge">React • Vite • MUI</span></div>
+          <p class="desc">Quotation tool that preloads items from JSON, applies per‑row line‑item discounts, merges exact duplicates by name & price, and shows summary totals. UI migrated to MUI and deployed on GitHub Pages.</p>
+          <div class="card-footer"><div class="card-footer"><div class="divider"></div><div class="actions"><a class="btn" href="midterm-quotation-app-build/">View Project</a></div></div></div>
+        </article>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Wai Yan Paing · Web Development Portfolio
+      </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </body>
 </html>
